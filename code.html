@@ -55,17 +55,39 @@
                 <div class="col-lg-8">
                     <pre class="line-numbers">
                         <code class="language-javascript">
-                            // Call Hello World
-                            function HelloWorld() {
-                                alert("Hello World");
+                            
+                            function getText() {
+                                document.getElementById("result").classList.add("invisible");
+
+                                let startText = document.getElementById("reverseText").value;
+                                let rText = reverseText(startText);
+                                displayText(rText);
+                            }
+
+                            function reverseText(startText){
+                                let rText = [];
+
+                                //reverse a string using a for loop
+                                for (let i = startText.length - 1; i >= 0; i--) {
+                                    rText += startText[i];
+                                }
+
+                                return rText;
+                            }
+
+                            function displayText(rText) {
+                                
+                                // write to the page
+                                document.getElementById('message').innerHTML = `Your string reversed is: ${rText}`;
+                                // show the alert box
+                                document.getElementById('result').classList.remove("invisible");
                             }
                         </code>
                     </pre>
                 </div>
                 <div class="col-lg-4">
-                    <p>The Code is structured in one function.</p>
-                    <h5>Hello World</h5>
-                    <p>Hello World is function that displays an alert with a message of "Hello World"</p>
+                    <h5>Rewind</h5>
+                    <p>Rewind is a Javascript project that takes a string and reverses it. It is accomplished by using three functions. <br><br>The first function gets the text from the user and also calls the other two functions. <br><br>The second function takes the text that was stored into a variable from the getText function, and is used as an argument for the reverseText function. It also serves for the actual task of reversing the string. This is accomplished by using a loop. <br><br>The third function is used to inject HTML into an alert that appears when removing the invisible class.</p>
                 </div>
             </div>
         </div>
